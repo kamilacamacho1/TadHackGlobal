@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorSplash">#000000</color>
+    <color name="colorFondo">#333333</color>
+    <color name="colorIntro">#871616</color>
+    <color name="colorJugar">#FFCC00</color>
+    <color name="colorAjustes">#26CA69</color>
+    <color name="colorRanking">#03A9F5</color>
+    <color name="colorInstrucciones">#FF9700</color>
+    <color name="colorNikName">#CC33CC</color>
+    <color name="colorInformacion">#F44236</color>
+    <color name="colorFinal">#adba49</color>
+
+
+</resources>

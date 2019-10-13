@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Bro Community</string>
+    <string name="title_home">Welcome</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="regex_name">^[A-Za-zñÑáÁéÉíÍóÓúÚ\\s]+$</string>
+    <string name="regex_email">^[-\w.]*@[-\w]*\.[\w]\{2,4}$</string>
+    <string name="regex_phone">(3\\d{9})$</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main_menu">MainMenu</string>
+</resources>
