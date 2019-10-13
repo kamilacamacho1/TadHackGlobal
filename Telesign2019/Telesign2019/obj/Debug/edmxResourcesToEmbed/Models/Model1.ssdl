@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDHack2019Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TblCampaign">
+    <Key>
+      <PropertyRef Name="IdCampaign" />
+    </Key>
+    <Property Name="IdCampaign" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cam_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Cam_language" Type="varchar" MaxLength="50" />
+    <Property Name="Cam_Location" Type="nchar" MaxLength="10" />
+    <Property Name="cam_ContactsList" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblUser">
+    <Key>
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="User_First_Name" Type="varchar" MaxLength="50" />
+    <Property Name="User_Last_Name" Type="varchar" MaxLength="50" />
+    <Property Name="User_Password" Type="varchar" MaxLength="50" />
+    <Property Name="User_Nationality" Type="varchar" MaxLength="50" />
+    <Property Name="User_BirthDate" Type="date" />
+    <Property Name="User_Addictions" Type="nvarchar(max)" />
+    <Property Name="User_Diseases" Type="nvarchar(max)" />
+    <Property Name="User_Ethnicity" Type="nvarchar" MaxLength="50" />
+    <Property Name="User_Sons" Type="int" />
+    <Property Name="User_EducationLevel" Type="varchar" MaxLength="50" />
+    <Property Name="User_Gender" Type="nvarchar" MaxLength="10" />
+    <Property Name="User_Icome" Type="varchar" MaxLength="150" />
+    <Property Name="User_Religion" Type="varchar" MaxLength="50" />
+    <Property Name="User_Location" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Function Name="SP_CreateCampaign" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="pCam_Name" Type="int" Mode="In" />
+    <Parameter Name="pCam_language" Type="varchar" Mode="In" />
+    <Parameter Name="PCam_Location" Type="nchar" Mode="In" />
+    <Parameter Name="Pcam_ContactsList" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <EntityContainer Name="BDHack2019ModelStoreContainer">
+    <EntitySet Name="TblCampaign" EntityType="Self.TblCampaign" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TblUser" EntityType="Self.TblUser" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
