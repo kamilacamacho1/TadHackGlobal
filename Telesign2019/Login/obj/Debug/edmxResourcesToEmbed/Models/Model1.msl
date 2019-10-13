@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDHack2019ModelStoreContainer" CdmEntityContainer="BDHack2019Entities">
+    <EntitySetMapping Name="TblCampaign">
+      <EntityTypeMapping TypeName="BDHack2019Model.TblCampaign">
+        <MappingFragment StoreEntitySet="TblCampaign">
+          <ScalarProperty Name="IdCampaign" ColumnName="IdCampaign" />
+          <ScalarProperty Name="Cam_Name" ColumnName="Cam_Name" />
+          <ScalarProperty Name="Cam_language" ColumnName="Cam_language" />
+          <ScalarProperty Name="Cam_Location" ColumnName="Cam_Location" />
+          <ScalarProperty Name="cam_ContactsList" ColumnName="cam_ContactsList" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblUser">
+      <EntityTypeMapping TypeName="BDHack2019Model.TblUser">
+        <MappingFragment StoreEntitySet="TblUser">
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="User_First_Name" ColumnName="User_First_Name" />
+          <ScalarProperty Name="User_Last_Name" ColumnName="User_Last_Name" />
+          <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+          <ScalarProperty Name="User_Nationality" ColumnName="User_Nationality" />
+          <ScalarProperty Name="User_BirthDate" ColumnName="User_BirthDate" />
+          <ScalarProperty Name="User_Addictions" ColumnName="User_Addictions" />
+          <ScalarProperty Name="User_Diseases" ColumnName="User_Diseases" />
+          <ScalarProperty Name="User_Ethnicity" ColumnName="User_Ethnicity" />
+          <ScalarProperty Name="User_Sons" ColumnName="User_Sons" />
+          <ScalarProperty Name="User_EducationLevel" ColumnName="User_EducationLevel" />
+          <ScalarProperty Name="User_Gender" ColumnName="User_Gender" />
+          <ScalarProperty Name="User_Icome" ColumnName="User_Icome" />
+          <ScalarProperty Name="User_Religion" ColumnName="User_Religion" />
+          <ScalarProperty Name="User_Location" ColumnName="User_Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_CreateCampaign" FunctionName="BDHack2019Model.Store.SP_CreateCampaign" />
+    <FunctionImportMapping FunctionImportName="SP_ListCampaign" FunctionName="BDHack2019Model.Store.SP_ListCampaign">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BDHack2019Model.SP_ListCampaign_Result">
+          <ScalarProperty Name="IdCampaign" ColumnName="IdCampaign" />
+          <ScalarProperty Name="Cam_Name" ColumnName="Cam_Name" />
+          <ScalarProperty Name="Cam_language" ColumnName="Cam_language" />
+          <ScalarProperty Name="Cam_Location" ColumnName="Cam_Location" />
+          <ScalarProperty Name="cam_ContactsList" ColumnName="cam_ContactsList" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

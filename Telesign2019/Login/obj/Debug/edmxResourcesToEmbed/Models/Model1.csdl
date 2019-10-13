@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDHack2019Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TblCampaign">
+    <Key>
+      <PropertyRef Name="IdCampaign" />
+    </Key>
+    <Property Name="IdCampaign" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cam_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cam_language" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cam_Location" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="cam_ContactsList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblUser">
+    <Key>
+      <PropertyRef Name="IdUser" />
+    </Key>
+    <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="User_First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="User_Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="User_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="User_Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="User_BirthDate" Type="DateTime" Precision="0" />
+    <Property Name="User_Addictions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="User_Diseases" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="User_Ethnicity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="User_Sons" Type="Int32" />
+    <Property Name="User_EducationLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="User_Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="User_Icome" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="User_Religion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="User_Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="BDHack2019Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TblCampaign" EntityType="Self.TblCampaign" />
+    <EntitySet Name="TblUser" EntityType="Self.TblUser" />
+    <FunctionImport Name="SP_CreateCampaign">
+      <Parameter Name="pCam_Name" Mode="In" Type="Int32" />
+      <Parameter Name="pCam_language" Mode="In" Type="String" />
+      <Parameter Name="PCam_Location" Mode="In" Type="String" />
+      <Parameter Name="Pcam_ContactsList" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_ListCampaign" ReturnType="Collection(BDHack2019Model.SP_ListCampaign_Result)" />
+  </EntityContainer>
+  <ComplexType Name="SP_ListCampaign_Result">
+    <Property Type="Int32" Name="IdCampaign" Nullable="false" />
+    <Property Type="String" Name="Cam_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Cam_language" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Cam_Location" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="cam_ContactsList" Nullable="true" />
+  </ComplexType>
+</Schema>

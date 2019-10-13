@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BDHack2019Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblCampaign">
+          <Key>
+            <PropertyRef Name="IdCampaign" />
+          </Key>
+          <Property Name="IdCampaign" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cam_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Cam_language" Type="varchar" MaxLength="50" />
+          <Property Name="Cam_Location" Type="nchar" MaxLength="10" />
+          <Property Name="cam_ContactsList" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblUser">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_First_Name" Type="varchar" MaxLength="50" />
+          <Property Name="User_Last_Name" Type="varchar" MaxLength="50" />
+          <Property Name="User_Password" Type="varchar" MaxLength="50" />
+          <Property Name="User_Nationality" Type="varchar" MaxLength="50" />
+          <Property Name="User_BirthDate" Type="date" />
+          <Property Name="User_Addictions" Type="nvarchar(max)" />
+          <Property Name="User_Diseases" Type="nvarchar(max)" />
+          <Property Name="User_Ethnicity" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_Sons" Type="int" />
+          <Property Name="User_EducationLevel" Type="varchar" MaxLength="50" />
+          <Property Name="User_Gender" Type="nvarchar" MaxLength="10" />
+          <Property Name="User_Icome" Type="varchar" MaxLength="150" />
+          <Property Name="User_Religion" Type="varchar" MaxLength="50" />
+          <Property Name="User_Location" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="SP_CreateCampaign" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pCam_Name" Type="int" Mode="In" />
+          <Parameter Name="pCam_language" Type="varchar" Mode="In" />
+          <Parameter Name="PCam_Location" Type="nchar" Mode="In" />
+          <Parameter Name="Pcam_ContactsList" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <Function Name="SP_ListCampaign" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="BDHack2019ModelStoreContainer">
+          <EntitySet Name="TblCampaign" EntityType="Self.TblCampaign" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblUser" EntityType="Self.TblUser" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BDHack2019Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblCampaign">
+          <Key>
+            <PropertyRef Name="IdCampaign" />
+          </Key>
+          <Property Name="IdCampaign" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cam_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cam_language" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cam_Location" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="cam_ContactsList" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblUser">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_BirthDate" Type="DateTime" Precision="0" />
+          <Property Name="User_Addictions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="User_Diseases" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="User_Ethnicity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_Sons" Type="Int32" />
+          <Property Name="User_EducationLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="User_Icome" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="User_Religion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_Location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="BDHack2019Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblCampaign" EntityType="Self.TblCampaign" />
+          <EntitySet Name="TblUser" EntityType="Self.TblUser" />
+          <FunctionImport Name="SP_CreateCampaign">
+            <Parameter Name="pCam_Name" Mode="In" Type="Int32" />
+            <Parameter Name="pCam_language" Mode="In" Type="String" />
+            <Parameter Name="PCam_Location" Mode="In" Type="String" />
+            <Parameter Name="Pcam_ContactsList" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_ListCampaign" ReturnType="Collection(BDHack2019Model.SP_ListCampaign_Result)" />
+        </EntityContainer>
+        <ComplexType Name="SP_ListCampaign_Result">
+          <Property Type="Int32" Name="IdCampaign" Nullable="false" />
+          <Property Type="String" Name="Cam_Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Cam_language" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Cam_Location" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="cam_ContactsList" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BDHack2019ModelStoreContainer" CdmEntityContainer="BDHack2019Entities">
+          <EntitySetMapping Name="TblCampaign">
+            <EntityTypeMapping TypeName="BDHack2019Model.TblCampaign">
+              <MappingFragment StoreEntitySet="TblCampaign">
+                <ScalarProperty Name="IdCampaign" ColumnName="IdCampaign" />
+                <ScalarProperty Name="Cam_Name" ColumnName="Cam_Name" />
+                <ScalarProperty Name="Cam_language" ColumnName="Cam_language" />
+                <ScalarProperty Name="Cam_Location" ColumnName="Cam_Location" />
+                <ScalarProperty Name="cam_ContactsList" ColumnName="cam_ContactsList" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblUser">
+            <EntityTypeMapping TypeName="BDHack2019Model.TblUser">
+              <MappingFragment StoreEntitySet="TblUser">
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="User_First_Name" ColumnName="User_First_Name" />
+                <ScalarProperty Name="User_Last_Name" ColumnName="User_Last_Name" />
+                <ScalarProperty Name="User_Password" ColumnName="User_Password" />
+                <ScalarProperty Name="User_Nationality" ColumnName="User_Nationality" />
+                <ScalarProperty Name="User_BirthDate" ColumnName="User_BirthDate" />
+                <ScalarProperty Name="User_Addictions" ColumnName="User_Addictions" />
+                <ScalarProperty Name="User_Diseases" ColumnName="User_Diseases" />
+                <ScalarProperty Name="User_Ethnicity" ColumnName="User_Ethnicity" />
+                <ScalarProperty Name="User_Sons" ColumnName="User_Sons" />
+                <ScalarProperty Name="User_EducationLevel" ColumnName="User_EducationLevel" />
+                <ScalarProperty Name="User_Gender" ColumnName="User_Gender" />
+                <ScalarProperty Name="User_Icome" ColumnName="User_Icome" />
+                <ScalarProperty Name="User_Religion" ColumnName="User_Religion" />
+                <ScalarProperty Name="User_Location" ColumnName="User_Location" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_CreateCampaign" FunctionName="BDHack2019Model.Store.SP_CreateCampaign" />
+          <FunctionImportMapping FunctionImportName="SP_ListCampaign" FunctionName="BDHack2019Model.Store.SP_ListCampaign">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BDHack2019Model.SP_ListCampaign_Result">
+                <ScalarProperty Name="IdCampaign" ColumnName="IdCampaign" />
+                <ScalarProperty Name="Cam_Name" ColumnName="Cam_Name" />
+                <ScalarProperty Name="Cam_language" ColumnName="Cam_language" />
+                <ScalarProperty Name="Cam_Location" ColumnName="Cam_Location" />
+                <ScalarProperty Name="cam_ContactsList" ColumnName="cam_ContactsList" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

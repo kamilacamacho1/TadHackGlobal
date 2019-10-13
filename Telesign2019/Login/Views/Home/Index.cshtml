@@ -1,0 +1,55 @@
+﻿@model List<Login.Models.Entity.CampaignEntity>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<button>@Html.ActionLink("Add Campaign", "Index", "Home")</button>
+
+<div>
+    <table class="table">
+        <tr>
+            <th hidden>
+                id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                language
+            </th>
+
+
+
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.IdCampaign)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.language)
+                </td>
+
+                <td>
+
+                    @Html.ActionLink("Send Campaign", "SendCampaign", new { id = item.IdCampaign }) |
+
+                </td>
+            </tr>
+
+        }
+    </table>
+</div>
